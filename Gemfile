@@ -10,7 +10,8 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 # gem 'coffee-rails', '~> 4.1.0'
 #
-gem 'haml'
+
+gem 'haml-rails'
 gem 'foundation-rails'
 
 # Use jquery as the JavaScript library
@@ -48,6 +49,7 @@ end
 
 group :test do
   gem 'rspec-rails'
+  gem 'guard-rspec'
 end
 
 group :production do

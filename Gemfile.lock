@@ -219,9 +219,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  foundation-rails
   guard-rspec
   haml-rails
-  foundation-rails
   jquery-rails
   pg
   rails (= 4.2.0)

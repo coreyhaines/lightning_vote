@@ -7,6 +7,5 @@ class CreateTalks < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :talks, :email
   end
 end

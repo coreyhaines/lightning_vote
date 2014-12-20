@@ -30,6 +30,4 @@ ActiveRecord::Schema.define(version: 20141220163243) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "talks", ["email"], name: "index_talks_on_email"
-
 end

@@ -4,8 +4,13 @@ class EventsController < ApplicationController
   end
 
   def create
-    Event.create(event_creation_params)
-    redirect_to new_event_url
+    @event = Event.new(event_creation_params)
+    if @event.save
+      redirect_to new_event_url
+    else
+      flash[:notice] = "Unable to save event"
+      render :new
+    end
   end
 
 private

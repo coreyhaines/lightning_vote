@@ -1,5 +1,10 @@
 module Admin
   class EventsController < ApplicationController
+
+    def index
+      @events = []
+    end
+
     def new
       @event = Event.new
     end
@@ -30,6 +35,9 @@ module Admin
     private
     def event_creation_params
       params.require(:event).permit(:title, :description, :date, :start_time)
+    end
+    def current_user
+      # this is here because rspec doubles are verifying. This will eventually be implemented when we have logged in users
     end
   end
 end

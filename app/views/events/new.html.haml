@@ -1,0 +1,6 @@
+%h1 Create a new event
+
+= form_for @event do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.submit

@@ -1,13 +1,19 @@
 %h1 Create a new event
 
-= form_for @event do |f|
-  = f.label :title
-  = f.text_field :title
-  = f.label :description
-  = f.text_area :description
-  = f.label :date
-  = f.date_field :date
-  = f.label :start_time
-  = f.text_field :start_time
-  = f.submit
+%div.new_event_form
+  = form_for @event do |f|
+    %div
+      = f.label :title
+      = f.text_field :title
+    %div
+      = f.label :description
+      = f.text_area :description
+    %div
+      = f.label :date
+      = f.date_field :date
+    %div
+      = f.label :start_time
+      = f.text_field :start_time
+    %div
+      = f.submit
 

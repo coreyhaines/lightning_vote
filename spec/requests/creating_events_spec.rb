@@ -7,7 +7,7 @@ RSpec.describe "CreatingEvents", :type => :request do
       expect(response).to have_http_status(200)
 
       event_params = {title: "Example Event", description: "This is a description", date: Date.today, start_time: "7pm"}
-      post events_path, :event => event_params
+      post events_path, event: event_params
       expect(response).to redirect_to(new_event_path)
 
       event = Event.find_by_title(event_params[:title])

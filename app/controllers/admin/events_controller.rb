@@ -2,7 +2,7 @@ module Admin
   class EventsController < ApplicationController
 
     def index
-      @events = []
+      @events = current_user.events
     end
 
     def new

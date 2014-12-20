@@ -2,14 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Talk, type: :model do
 
-  let(:talk_without_topic) { Talk.new(topic: "", email:"foo@example.com") }
-  let(:talk_without_email) { Talk.new(topic: "Testing", email:"") }
+  [:topic, :email].each do |field|
+    it "requires the #{field} field" do
+      talk = Talk.new
 
-  it "requires a topic" do
-    expect(talk_without_topic).to_not be_valid
-  end
+      talk.validate
+      expect(talk.errors[field]).to_not be_empty
 
-  it "requires an email" do
-    expect(talk_without_email).to_not be_valid
+      talk.send("#{field}=", "Foo")
+      talk.validate
+      expect(talk.errors[field]).to be_empty
+    end
   end
 end

@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 #
 
 gem 'haml-rails'
+gem 'foundation-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

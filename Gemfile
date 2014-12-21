@@ -22,13 +22,16 @@ gem 'jquery-rails', '4.0.2'
 # gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 gem 'unicorn', '4.8.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#
+gem 'omniauth'
+gem 'omniauth-identity'
 
 group :development, :test do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

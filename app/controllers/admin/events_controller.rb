@@ -6,7 +6,7 @@ module Admin
     end
 
     def new
-      @event = Event.new
+      @event = current_user.events.new
     end
 
     def create
@@ -35,10 +35,6 @@ module Admin
     private
     def event_creation_params
       params.require(:event).permit(:title, :description, :date, :start_time)
-    end
-    def current_user
-      # this is here because rspec doubles are verifying. This will eventually be implemented with the actual logged in user when we have logged in users
-      User.find(session[:current_user_id])
     end
   end
 end

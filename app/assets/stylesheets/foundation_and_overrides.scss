@@ -101,6 +101,8 @@ $lightGrey    : #f0f0f0;
 $darkGrey     : #c4c4c4;
 $black        : #000000;
 
+$lightNavy    : lighten( $primaryNavy, 33% );
+
 // We use these as default colors throughout
 // $primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
@@ -133,6 +135,7 @@ $oil           : $primaryNavy;
 
 // We use these to control various global styles
 // $body-bg: $white;
+$body-bg: $lightGrey;
 // $body-font-color: $jet;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -1477,11 +1480,12 @@ $topbar-height: 60px;
   color: #f0f0f0;
 }
 
-.form {
+.form, .talk-list {
   background-color: #121828;
   padding: 3%;
   border-radius: 30px;
-  color: white;
+  color: $lightGrey;
+  margin-top: 20px;
 }
 
 .form label {
@@ -1502,4 +1506,18 @@ $topbar-height: 60px;
 
 :-ms-input-placeholder {  
    color: $darkGrey;  
+}
+
+.talk-title h1 {
+  color: $primaryNavy;
+  text-shadow: 1px 1px 1px white;
+}
+
+.talk-information:hover .details {
+  display: block;
+}
+
+.talk-information .details {
+  display: none;
+  color: $lightNavy;
 }

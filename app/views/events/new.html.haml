@@ -1,0 +1,26 @@
+- if flash[:notice]
+  .notice=flash[:notice]
+
+%div.row.form
+  %div.row
+    %h1 Create a new event
+
+  %div.row
+    %div.small-10.small-push-1
+      %div.new_event_form
+        = form_for @event do |f|
+          %div
+            = f.label :title
+            = f.text_field :title
+          %div
+            = f.label :description
+            = f.text_area :description
+          %div
+            = f.label :date
+            = f.date_field :date
+          %div
+            = f.label :start_time
+            = f.text_field :start_time
+          %div
+            = f.submit
+

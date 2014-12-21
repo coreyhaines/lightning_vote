@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Lightning Vote" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="logo"><%= image_tag "lightning-vote-logo.png" %></a>
+      
+      <nav>
+        <li>Home</li>
+        <li>Events</li>
+        <li>Sing up</li>
+        <li>Login</li>
+      </nav>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

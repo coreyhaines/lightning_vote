@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+/* navy blue - 121828
+ yellow - ffff00
+ light grey - f0f0f0
+ dark grey - c4c4c4
+ black - 000000*/
+
+header {
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  background-color: #121828;
+  top: 0;
+  left: 0;
+}
+
+nav li a {
+  color: #f0f0f0;
+}
+
+.logo img {
+  position: fixed;
+  top: 5px;
+  height: 75px;
+}
+
+nav {
+  width: 60%;
+  /*position: fixed;*/
+  float: right;
+  display: inline-block;
+  top: 20px;
+  right: 0;
+}
+
+nav li {
+  margin: 0;
+  padding: 17px 5% 0 5%;
+  display: inline-block;
+  list-style-type: none;
+  color: #f0f0f0;
+  float: right;
+}
+
+.container {
+  padding-top: 75px;
+}
+
+.row h1 {
+  color: #f0f0f0;
+}
+
+.form {
+  background-color: #121828;
+  padding: 3%;
+  border-radius: 2%;
+  color: white;
+}
+
+.form label {
+  color: #f0f0f0;
+}

@@ -11,16 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141221225411) do
-=======
-ActiveRecord::Schema.define(version: 20141221184112) do
->>>>>>> Re-wire Event and Talk to EventTalk
 
   create_table "event_talks", force: :cascade do |t|
     t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "talk_time"
+    t.integer  "talk_slots"
   end
 
   create_table "events", force: :cascade do |t|

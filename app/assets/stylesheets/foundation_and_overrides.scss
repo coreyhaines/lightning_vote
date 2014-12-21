@@ -79,7 +79,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-$row-width: rem-calc(1000);
+$row-width: rem-calc(800);
 // $total-columns: 12;
 // $column-gutter: rem-calc(30);
 
@@ -152,6 +152,8 @@ $body-bg: $lightGrey;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
+$global-radius: 6px;
+
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -444,6 +446,8 @@ $body-bg: $lightGrey;
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
 // $button-font-color: $white;
+$button-font-color: $black;
+
 // $button-font-color-alt: $oil;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
@@ -459,6 +463,8 @@ $body-bg: $lightGrey;
 // $button-border-width: 0px;
 // $button-border-style: solid;
 // $button-bg-color: $primary-color;
+$button-bg-color: $lightning;
+
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -1478,6 +1484,7 @@ $topbar-height: 60px;
 
 .row h1 {
   color: #f0f0f0;
+  // margin-left: -15px;
 }
 
 .form, .talk-list {
@@ -1520,4 +1527,77 @@ $topbar-height: 60px;
 .talk-information .details {
   display: none;
   color: $lightNavy;
+}
+
+.form_container { @extend .row, .form }
+.form_container > div { @extend .row }
+.form_container > div > div { @extend .small-10, .small-push-1 }
+
+
+
+@media #{$small-only} {
+  body {
+    background-color: $primaryNavy;
+  }
+
+  .hello {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 60px;
+    background-color: yellow;
+    width: 60px;  
+  }
+
+  .container {
+    padding-top: 10px;
+  }
+
+  .top-bar {
+    // background-color: $darkGrey; 
+    background-color: $lightGrey; 
+
+  }
+
+  .fixed {
+    box-shadow: 1px 1px 1px $primaryNavy; 
+  }
+
+  .logo img {
+    top: 14px;
+    height: 40px;
+    left: 10px;
+  }
+
+  .logo-small img {
+    position: fixed;
+    top: 10px;
+    height: 40px;
+    left: 45px;
+  }
+
+  .small-menu-icon {
+    // width: 60px;
+    // height: 60px;
+    z-index: 999;
+    background-color: yellow;
+  }
+
+  .small-menu-dropdown {
+    width: 60px;
+    height: 60px;
+    background-color: red;
+  }
+
+  .small-screen-menu {
+    width: 100%;
+  }
+
+}
+
+@media #{$medium-only} {
+  // body {
+  //   background-color: $primaryNavy;
+  // }
+
 }

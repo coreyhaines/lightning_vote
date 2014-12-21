@@ -12,23 +12,73 @@
   </head>
 
   <body>
-    <div class="fixed">
-      <nav class="top-bar" data-topbar role="navigation">
+    <div class="fixed show-for-medium-up">
+      <nav class="top-bar show-for-medium-up" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
             <a href="/" class="logo"><%= image_tag "lightning-vote-logo.png" %></a>
           </li>
         </ul>
-        <section class="top-bar-section">
+        <section class="top-bar-section show-for-medium-up">
           <ul class="right">
             <li><a href="#">Create New Event</a></li>
             <li><a href="#">Signup</a>
             <li><a href="#">Login</a></li>
           </ul>  
         </section>
+        <!-- <section class="top-bar-section show-for-small">
+          <ul class="right">
+            <li class="has-dropdown">
+              <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
+              <ul class="dropdown">
+                <li><a href="#">Create New Event</a></li>
+                <li><a href="#">Signup</a></li>
+                <li><a href="#">Login</a></li>
+              </ul>
+            </li>
+          </ul>  
+        </section> -->
+
+    </div>
+
+    <div class="fixed show-for-small-only">
+      <nav class="top-bar" data-topbar role="navigation">
+        <a href="/" class="logo"><%= image_tag "lightning-vote-logo.png" %></a>
+       <!--  <section class="top-bar-section show-for-medium-up">
+          <ul class="right">
+            <li><a href="#">Create New Event</a></li>
+            <li><a href="#">Signup</a>
+            <li><a href="#">Login</a></li>
+          </ul>  
+        </section> -->
+        <!-- <section class="top-bar-section show-for-small">
+          <ul class="right">
+            <li class="has-dropdown">
+              <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
+              <ul class="dropdown">
+                <li><a href="#">Create New Event</a></li>
+                <li><a href="#">Signup</a></li>
+                <li><a href="#">Login</a></li>
+              </ul>
+            </li>
+          </ul>  
+        </section> -->
+
+      <!-- </nav> -->
+        <!-- <div class="hello"> -->
+        <section class="top-bar-section small-menu-icon right">
+          <ul class="right small-screen-menu">
+            <li class="has-dropdown">
+              <a class="small-menu-dropdown" href="#"></a>
+              <ul class="dropdown right">
+                <li><a href="#">Create New Event</a></li>
+                <li><a href="#">Signup</a>
+                <li><a href="#">Login</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
       </nav>
-
-
     </div>
 
 

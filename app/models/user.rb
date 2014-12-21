@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :user_profiles
   has_many :events, foreign_key: "administrator_id"
+  has_one :user_detail
+
+  accepts_nested_attributes_for :user_detail
 
   def create_event(params)
     events.create(params)

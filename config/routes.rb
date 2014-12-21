@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   namespace :public do
     resources :events, only: [] do
-      resources :talks, only: [:index]
+      resources :talks, only: [:index, :create]
     end
   end
 end

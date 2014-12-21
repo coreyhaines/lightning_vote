@@ -1,9 +1,13 @@
 class SessionsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
   def create
-    user = User.for_profile_information(auth_hash[:provider], auth_hash[:uid], auth_hash[:info], auth_hash[:extra])
-    session[:current_user_id] = user.id
-    redirect_to "/admin/events"
+    user = User.find_or_create_by_auth_hash(auth_hash)
+    if user
+      session[:current_user_id] = user.id
+      redirect_to "/admin/events"
+    else
+      redirect_to "/auth/identity"
+    end
   end
   private
   def auth_hash

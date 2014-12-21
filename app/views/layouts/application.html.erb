@@ -12,16 +12,26 @@
   </head>
 
   <body>
-    <header>
-      <a href="/" class="logo"><%= image_tag "lightning-vote-logo.png" %></a>
-      
-      <nav>
-        <li>Home</li>
-        <li>Events</li>
-        <li>Sing up</li>
-        <li>Login</li>
+    <div class="fixed">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <a href="/" class="logo"><%= image_tag "lightning-vote-logo.png" %></a>
+          </li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li><a href="#">Create New Event</a></li>
+            <li><a href="#">Signup</a>
+            <li><a href="#">Login</a></li>
+          </ul>  
+        </section>
       </nav>
-    </header>
+
+
+    </div>
+
+
     <div class="container">
       <%= yield %>
     </div>

@@ -95,6 +95,12 @@ $row-width: rem-calc(1000);
 // $font-weight-normal: normal !default;
 // $font-weight-bold: bold !default;
 
+$primaryNavy  : #121828;
+$lightning    : #ffff00;
+$lightGrey    : #f0f0f0;
+$darkGrey     : #c4c4c4;
+$black        : #000000;
+
 // We use these as default colors throughout
 // $primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
@@ -120,8 +126,10 @@ $row-width: rem-calc(1000);
 // $charcoal    : #555555;
 // $tuatara     : #444444;
 // $oil         : #333333;
+$oil           : $primaryNavy;
 // $jet         : #222222;
 // $black       : #000000;
+// $lightning: yellow;
 
 // We use these to control various global styles
 // $body-bg: $white;
@@ -624,6 +632,13 @@ $row-width: rem-calc(1000);
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
+// $input-font-color: $darkGrey;
+
+::-webkit-datetime-edit-text { color: $darkGrey; }
+::-webkit-datetime-edit-year-field { color: $darkGrey; }
+::-webkit-datetime-edit-month-field { color: $darkGrey; }
+::-webkit-datetime-edit-day-field { color: $darkGrey; }
+
 // $input-font-size: rem-calc(14);
 // $input-bg-color: $white;
 // $input-focus-bg-color: scale-color($white, $lightness: -2%);
@@ -638,6 +653,7 @@ $row-width: rem-calc(1000);
 
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
+$fieldset-border-style: none;
 // $fieldset-border-width: 1px;
 // $fieldset-border-color: $gainsboro;
 // $fieldset-padding: rem-calc(20);
@@ -1365,7 +1381,12 @@ $row-width: rem-calc(1000);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 60px;
+
+.fixed {
+  box-shadow: -1px 2px 3px darkgrey;
+}
+
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1441,3 +1462,44 @@ $row-width: rem-calc(1000);
 // $include-accessibility-classes: true;
 
 @import 'foundation';
+
+.logo img {
+  position: fixed;
+  top: 5px;
+  height: 75px;
+}
+
+.container {
+  padding-top: 75px;
+}
+
+.row h1 {
+  color: #f0f0f0;
+}
+
+.form {
+  background-color: #121828;
+  padding: 3%;
+  border-radius: 30px;
+  color: white;
+}
+
+.form label {
+  color: #f0f0f0;
+}
+
+::-webkit-input-placeholder {
+   color: $darkGrey;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $darkGrey;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $darkGrey;  
+}
+
+:-ms-input-placeholder {  
+   color: $darkGrey;  
+}

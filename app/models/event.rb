@@ -5,4 +5,6 @@ class Event < ActiveRecord::Base
   delegate :submit_talk, to: :event_talk
 
   validates :title, presence: true
+
+  accepts_nested_attributes_for :event_talk
 end

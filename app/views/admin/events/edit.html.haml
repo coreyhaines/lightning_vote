@@ -18,12 +18,12 @@
       = f.label :start_time
       = f.text_field :start_time
     %div
-    = f.fields_for :event_talk do |event_talk|
+    = f.fields_for :event_talk do |et|
       %div
-        = event_talk.label :talk_time
-        = event_talk.text_field :talk_time
+        = et.label :talk_time
+        = et.text_field :talk_time
       %div
-        = event_talk.label :talk_slots
-        = event_talk.text_field :talk_slots
+        = et.label :talk_slots
+        = et.text_field :talk_slots
       %div
         = f.submit

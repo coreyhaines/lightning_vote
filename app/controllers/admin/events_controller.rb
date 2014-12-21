@@ -37,7 +37,8 @@ module Admin
       params.require(:event).permit(:title, :description, :date, :start_time)
     end
     def current_user
-      # this is here because rspec doubles are verifying. This will eventually be implemented when we have logged in users
+      # this is here because rspec doubles are verifying. This will eventually be implemented with the actual logged in user when we have logged in users
+      User.first
     end
   end
 end

@@ -3,6 +3,7 @@ module Public
     def show
       @event = Event.find(params[:id])
       @talks = @event.talks
+      @organizer = @event.administrator
     end
   end
 end

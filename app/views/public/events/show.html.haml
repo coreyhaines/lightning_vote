@@ -1,7 +1,7 @@
 %h1 #{@event.title}
 
 .event_details
-  .name Organizer: #{@event.administrator.name}
+  .name Organizer: #{@organizer.name}
 
 %ul.talks
   -@talks.each do |talk|

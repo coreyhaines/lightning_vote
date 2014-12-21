@@ -1,8 +1,18 @@
-%h1 #{@event.title}
+%div.row.talk-title
+  %div.small-10.push-1
+    %h1 #{@event.title}
 
-.event_details
-  .name Organizer: #{@organizer.name}
+%div.row
+  %div.small-10.push-1
+    .event_details
+      .name Organizer: #{@organizer.name}
 
-%ul.talks
-  -@talks.each do |talk|
-    %li=talk.topic
+%div.row
+  %div.small-10.push-1.talk-list
+    Event Talks:
+    %ul.talks
+      -@talks.each do |talk|
+        %li.talk-information
+          .topic=talk.topic
+          .details
+            .description=talk.description

@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20141220234706) do
 
   create_table "events", force: :cascade do |t|
-    t.string   "title",       null: false
+    t.string   "title",            null: false
     t.text     "description"
     t.date     "date"
     t.text     "start_time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "administrator_id"
   end
 
   create_table "talks", force: :cascade do |t|

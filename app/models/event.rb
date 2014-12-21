@@ -1,9 +1,8 @@
 class Event < ActiveRecord::Base
-  validates :title, presence: true
-  has_many :talks
-  belongs_to :administrator, class: User
+  has_one :event_talk
+  has_many :talks, through: :event_talk
 
-  def submit_talk(params)
-    talks.create params
-  end
+  delegate :submit_talk, to: :event_talk
+
+  validates :title, presence: true
 end

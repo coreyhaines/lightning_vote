@@ -10,8 +10,9 @@ module Admin
     end
 
     def create
-      @event = current_user.create_event(event_creation_params)
-      if @event.valid?
+      @event = Event.new(event_creation_params)
+      @event.build_event_talk
+      if @event.save
         redirect_to new_admin_event_url
       else
         flash[:notice] = "Unable to save event"

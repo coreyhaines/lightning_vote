@@ -1,4 +1,9 @@
 class EventTalk < ActiveRecord::Base
 	has_many :talks
-	has_one :event
+	belongs_to :event
+
+  def submit_talk(params)
+    talks.create params
+  end
+
 end

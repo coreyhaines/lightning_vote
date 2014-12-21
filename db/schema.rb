@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141221225411) do
+=======
+ActiveRecord::Schema.define(version: 20141221184112) do
+>>>>>>> Re-wire Event and Talk to EventTalk
 
   create_table "event_talks", force: :cascade do |t|
-    t.integer  "talk_id"
     t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "event_talks", ["talk_id"], name: "index_event_talks_on_talk_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "title",            null: false
@@ -43,9 +44,10 @@ ActiveRecord::Schema.define(version: 20141221225411) do
     t.string   "topic"
     t.string   "email"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "event_id"
+    t.integer  "event_talk_id"
   end
 
   add_index "talks", ["event_id"], name: "index_talks_on_event_id"

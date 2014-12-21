@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       resources :talks, only: [:index, :create]
     end
   end
+
+  post "/auth/identity/callback" => "sessions#create"
 end

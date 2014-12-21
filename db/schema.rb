@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20141221225411) do
   add_index "user_profiles", ["provider", "uid"], name: "index_user_profiles_on_provider_and_uid"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "username",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

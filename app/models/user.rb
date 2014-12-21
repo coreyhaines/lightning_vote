@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :user_detail
 
+  delegate :name, :to => :user_detail
+
+  after_create -> { create_user_detail }
+
   def create_event(params)
     events.create(params)
   end
@@ -21,7 +25,7 @@ class User < ActiveRecord::Base
     provider = auth_hash[:provider]
     uid = auth_hash[:uid]
     username = auth_hash[:info][:email]
-    User.create(name: username).tap do |new_user|
+    User.create(username: username).tap do |new_user|
       new_user.user_profiles.create provider: provider, uid: uid
     end
   end

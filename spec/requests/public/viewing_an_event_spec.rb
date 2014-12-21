@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Publicly viewing an event", type: :request do
   describe "GET /events/:id" do
-    let(:administrator) { User.create! name: "Corey" }
+    let(:administrator) { User.create! username: "Corey" }
     let(:event) { administrator.create_event title: "Example Event" }
     it "Shows the basic event information" do
       get "/events/#{event.id}"

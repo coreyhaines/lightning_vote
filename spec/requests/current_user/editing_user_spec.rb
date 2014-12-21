@@ -6,8 +6,8 @@ RSpec.describe "Editing User Account", :type => :request do
   end
   let(:user) { User.last }
   describe "User details information" do
-    xit "lets me update my general information" do
-      patch current_user_path, user_detail: {name: "Corey Haines"}
+    it "lets me update my general information" do
+      patch current_user_path, user: {user_detail_attributes: {name: "Corey Haines"}}
       user.reload
       expect(user.name).to eq("Corey Haines")
     end

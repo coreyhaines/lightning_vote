@@ -19,7 +19,7 @@ RSpec.describe "CreatingEvents", :type => :request do
     end
 
     it "links the created event to the logged in user" do
-      expect(event.administrator.name).to eq("corey@example.com")
+      expect(event.administrator.username).to eq("corey@example.com")
     end
   end
 

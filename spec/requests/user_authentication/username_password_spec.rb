@@ -8,6 +8,6 @@ RSpec.describe "User Authentication - Username / Password", :type => :request do
     expect(identity).to_not be_nil
     user = UserProfile.lookup_user("identity", identity.uid)
     expect(user).to_not be_nil
-    expect(user.name).to eq("corey@example.com")
+    expect(user.username).to eq("corey@example.com")
   end
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :events, only: [:index, :new, :create, :edit, :update] do
-    	resources :eventtalk, only: [:new, :create, :edit, :update]
+      resources :eventtalk, only: [:new, :create, :edit, :update]
     end
   end
 

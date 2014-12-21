@@ -34,6 +34,7 @@ RSpec.describe "CreatingEvents", :type => :request do
       updated_event = Event.find(event.id)
       expect(updated_event.title).to eq("Updated title")
     end
+
     it "lets me set the number of talk slots" do
       event = Event.create! event_params
       event.create_event_talk
@@ -41,9 +42,21 @@ RSpec.describe "CreatingEvents", :type => :request do
       get edit_admin_event_path(event)
       expect(response).to have_http_status(200)
 
-      patch admin_event_path(event), event: { event_talk: { talk_slots: 9 } }
+      patch admin_event_path(event), event: { event_talk_attributes: { talk_slots: 9 } }
       updated_event = Event.find(event.id)
       expect(updated_event.event_talk.talk_slots).to eq(9)
+    end
+
+    it "lets me set the talk time" do
+      event = Event.create! event_params
+      event.create_event_talk
+
+      get edit_admin_event_path(event)
+      expect(response).to have_http_status(200)
+
+      patch admin_event_path(event), event: { event_talk_attributes: { talk_time: 15 } }
+      updated_event = Event.find(event.id)
+      expect(updated_event.event_talk.talk_time).to eq(15)
     end
   end
 end

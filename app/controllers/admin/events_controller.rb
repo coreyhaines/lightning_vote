@@ -37,7 +37,7 @@ module Admin
     def event_creation_params
       params.require(:event).permit(:title, :description, :date,
                                     :start_time,
-                                    event_talk: [ :talk_slots, :talk_time ] )
+                                    event_talk_attributes: [ :talk_slots, :talk_time ] )
     end
   end
 end

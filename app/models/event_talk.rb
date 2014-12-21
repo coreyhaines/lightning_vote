@@ -1,4 +1,4 @@
 class EventTalk < ActiveRecord::Base
 	has_many :talks
-	has_many :events
+	has_one :event
 end

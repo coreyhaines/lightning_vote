@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :events, only: [:index, :new, :create, :edit, :update]
+    resources :events, only: [:index, :new, :create, :edit, :update] do
+    	resources :eventtalk, only: [:new, :create, :edit, :update]
+    end
   end
 
   resource :current_user, :controller => "current_user", only: [:edit, :update]

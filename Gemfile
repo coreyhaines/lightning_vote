@@ -11,11 +11,11 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'coffee-rails', '~> 4.1.0'
 #
 
-gem 'haml-rails'
-gem 'foundation-rails'
+gem 'haml-rails', '0.6.0'
+gem 'foundation-rails', '5.4.5.0'
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '4.0.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -25,17 +25,17 @@ gem 'jquery-rails'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-gem 'unicorn'
+gem 'unicorn', '4.8.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', platforms: :ruby
+  gem 'therubyracer', '0.12.1', platforms: :ruby
 
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.10'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug'
@@ -44,15 +44,15 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '1.2.0'
 end
 
 group :test do
-  gem 'rspec-rails'
-  gem 'guard-rspec'
+  gem 'rspec-rails', '3.1.0'
+  gem 'guard-rspec', '4.5.0'
 end
 
 group :production do
-  gem 'rails_12factor'
-  gem 'pg'
+  gem 'rails_12factor', '0.0.3'
+  gem 'pg', '0.17.1'
 end

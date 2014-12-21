@@ -1,25 +1,30 @@
 - if flash[:notice]
   .notice=flash[:notice]
 
-%div.row.form
-  %div.row
-    %h1 Create a new event
+/ %div.row.form # .form_container
+/   %div.row #.header
+/     %div.small-10.small-push-1
+/       %h1 Create a new event
 
-  %div.row
-    %div.small-10.small-push-1
-      %div.new_event_form
+%div.form_container
+  %div
+    %div
+      %h1 Create a new event
+
+  %div
+    %div
+      %div
         = form_for [:admin, @event] do |f|
-          %div.row
-            %div
-              = f.text_field :title, :placeholder => "title"
-          %div.row
-            %div
-              = f.text_area :description, :placeholder => "talk description"
-          %div.row
-            %div.small-5
-              = f.date_field :date
-          %div.row
-            %div.small-5
-              = f.text_field :start_time, :placeholder => "start time"
-          %div.row
-            = f.submit
+          %div
+            = f.text_field :title, :placeholder => "title"
+          %div
+            = f.text_area :description, :placeholder => "talk description"
+          %div.small-7
+            = f.date_field :date
+          %div.small-7
+            = f.text_field :start_time, :placeholder => "start time"
+          %div.right
+            = f.submit "Create", :class => "button radius"
+
+
+

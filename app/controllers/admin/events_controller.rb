@@ -10,8 +10,8 @@ module Admin
     end
 
     def create
-      @event = Event.new(event_creation_params)
-      if @event.save
+      @event = current_user.create_event(event_creation_params)
+      if @event.valid?
         redirect_to new_admin_event_url
       else
         flash[:notice] = "Unable to save event"
@@ -38,7 +38,7 @@ module Admin
     end
     def current_user
       # this is here because rspec doubles are verifying. This will eventually be implemented with the actual logged in user when we have logged in users
-      User.first
+      User.find(session[:current_user_id])
     end
   end
 end

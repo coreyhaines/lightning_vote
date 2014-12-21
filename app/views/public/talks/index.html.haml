@@ -1,2 +1,6 @@
 %h1 Talks for #{@event.title}
 
+%ul.talks
+  -@talks.each do |talk|
+    %li=talk.topic
+

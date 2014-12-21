@@ -1,5 +1,8 @@
 %h1 #{@event.title}
 
+.event_details
+  .name Organizer: #{@event.administrator.name}
+
 %ul.talks
   -@talks.each do |talk|
     %li=talk.topic

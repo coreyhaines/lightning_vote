@@ -4,11 +4,11 @@ RSpec.describe "CreatingEvents", :type => :request do
   let(:event_params) { {title: "Example Event", description: "This is a description", date: Date.today, start_time: "7pm"} }
   describe "Creating a new event" do
     it "lets me create a new event" do
-      get new_event_path
+      get new_admin_event_path
       expect(response).to have_http_status(200)
 
-      post events_path, event: event_params
-      expect(response).to redirect_to(new_event_path)
+      post admin_events_path, event: event_params
+      expect(response).to redirect_to(new_admin_event_path)
 
       event = Event.find_by_title(event_params[:title])
       expect(event.title).to eq(event_params[:title])
@@ -22,10 +22,10 @@ RSpec.describe "CreatingEvents", :type => :request do
     it "lets me edit an existing event" do
       event = Event.create! event_params
 
-      get edit_event_path(event)
+      get edit_admin_event_path(event)
       expect(response).to have_http_status(200)
 
-      patch event_path(event), event: {title: "Updated title"}
+      patch admin_event_path(event), event: {title: "Updated title"}
       updated_event = Event.find(event.id)
       expect(updated_event.title).to eq("Updated title")
     end

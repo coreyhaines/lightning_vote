@@ -8,7 +8,7 @@
   %div.row
     %div.small-10.small-push-1
       %div.new_event_form
-        = form_for @event do |f|
+        = form_for [:admin, @event] do |f|
           %div
             = f.label :title
             = f.text_field :title
@@ -23,4 +23,3 @@
             = f.text_field :start_time
           %div
             = f.submit
-

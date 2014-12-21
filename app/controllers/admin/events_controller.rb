@@ -20,11 +20,11 @@ module Admin
     end
 
     def edit
-      @event = Event.find(params[:id])
+      @event = current_user.events.find(params[:id])
     end
 
     def update
-      @event = Event.find(params[:id])
+      @event = current_user.events.find(params[:id])
       if @event.update_attributes(event_creation_params)
         redirect_to new_admin_event_url
       else

@@ -1,4 +1,4 @@
-module Admin
+module Organizer
   class EventsController < ApplicationController
 
     def index
@@ -12,7 +12,7 @@ module Admin
     def create
       @event = current_user.create_event(event_creation_params)
       if @event.valid?
-        redirect_to new_admin_event_url
+        redirect_to new_organizer_event_url
       else
         flash[:notice] = "Unable to save event"
         render :new
@@ -26,7 +26,7 @@ module Admin
     def update
       @event = current_user.events.find(params[:id])
       if @event.update_attributes(event_creation_params)
-        redirect_to new_admin_event_url
+        redirect_to new_organizer_event_url
       else
         flash[:notice] = "Unable to update event"
         render :edit

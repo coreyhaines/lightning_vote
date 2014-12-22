@@ -9,7 +9,7 @@ RSpec.describe "CreatingEvents", :type => :request do
   let(:user) { User.find_by_username("corey@example.com") }
   describe "Creating a new event" do
     before do
-      post admin_events_path, event: event_params
+      post organizer_events_path, event: event_params
     end
 
     it "lets me create a new event" do
@@ -20,18 +20,18 @@ RSpec.describe "CreatingEvents", :type => :request do
     end
 
     it "links the created event to the logged in user" do
-      expect(event.administrator.username).to eq("corey@example.com")
+      expect(event.organizer.username).to eq("corey@example.com")
     end
   end
 
   describe "Editing an event" do
     it "lets me edit an existing event" do
-      post admin_events_path, event: event_params
+      post organizer_events_path, event: event_params
 
-      get edit_admin_event_path(event)
+      get edit_organizer_event_path(event)
       expect(response).to have_http_status(200)
 
-      patch admin_event_path(event), event: {title: "Updated title"}
+      patch organizer_event_path(event), event: {title: "Updated title"}
       updated_event = Event.find(event.id)
       expect(updated_event.title).to eq("Updated title")
     end
@@ -40,10 +40,10 @@ RSpec.describe "CreatingEvents", :type => :request do
       event = user.create_event event_params
       event.create_event_talk
 
-      get edit_admin_event_path(event)
+      get edit_organizer_event_path(event)
       expect(response).to have_http_status(200)
 
-      patch admin_event_path(event), event: { event_talk_attributes: { talk_slots: 9 } }
+      patch organizer_event_path(event), event: { event_talk_attributes: { talk_slots: 9 } }
       updated_event = Event.find(event.id)
       expect(updated_event.event_talk.talk_slots).to eq(9)
     end
@@ -52,10 +52,10 @@ RSpec.describe "CreatingEvents", :type => :request do
       event = user.create_event event_params
       event.create_event_talk
 
-      get edit_admin_event_path(event)
+      get edit_organizer_event_path(event)
       expect(response).to have_http_status(200)
 
-      patch admin_event_path(event), event: { event_talk_attributes: { talk_time: 15 } }
+      patch organizer_event_path(event), event: { event_talk_attributes: { talk_time: 15 } }
       updated_event = Event.find(event.id)
       expect(updated_event.event_talk.talk_time).to eq(15)
     end

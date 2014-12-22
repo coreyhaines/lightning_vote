@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   has_one :event_talk
   has_many :talks, through: :event_talk
-  belongs_to :administrator, class: User
+  belongs_to :organizer, class: User
 
   delegate :submit_talk, to: :event_talk
 

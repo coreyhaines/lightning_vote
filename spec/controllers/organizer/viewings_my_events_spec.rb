@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Admin::EventsController, type: :controller do
-  describe "GET /admin/events" do
+RSpec.describe Organizer::EventsController, type: :controller do
+  describe "GET /organizer/events" do
     let(:current_user) { User.create username: "Shreya" }
     before do
       allow(controller).to receive(:current_user).and_return(current_user)

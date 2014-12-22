@@ -4,7 +4,7 @@
 
 
 %div.edit_event_form
-  = form_for [:admin, @event] do |f|
+  = form_for [:organizer, @event] do |f|
     %div
       = f.label :title
       = f.text_field :title

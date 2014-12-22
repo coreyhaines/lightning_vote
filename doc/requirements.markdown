@@ -2,7 +2,7 @@
 
 ## Personas
 
-### Administrator
+### Organizer
 
 This is the person who is setting up the event
 
@@ -27,7 +27,7 @@ This is a person interested in the information about the event / registered talk
 ## Signing up
 
 Required to sign up
-* Administrator
+* Organizer
 * Facilitator
 
 Not Required to sign up
@@ -39,11 +39,11 @@ Maybe
 
 ## Setting up vanilla event
 
-Administrator
+Organizer
 
 ### Pre-conditions
 
-* Administrator is a registered user
+* Organizer is a registered user
 
 ### Steps
 
@@ -60,13 +60,13 @@ Administrator
 
 ## Assigning the facilitator
 
-* Administrator
+* Organizer
 
 ### Steps
 
 1. Go to the event administration page
 2. Enter the email address of the facilitator
-  2.1 Administrator is NOT the facilitator
+  2.1 Organizer is NOT the facilitator
     2.1.1 Facilitator receives an invite email to event
 
 ### Post-conditions
@@ -78,8 +78,8 @@ Administrator
 1. Event exists
 
 ### Steps
-1. Administrator goes to event management
-2. Administrator sets event to "accepting" state
+1. Organizer goes to event management
+2. Organizer sets event to "accepting" state
   2.1 Set a timeframe
     2.1.1 Begin time
     2.1.2 End time
@@ -97,8 +97,8 @@ Administrator
 1. Event exists
 
 ### Steps
-1. Administrator goes to event management
-2. Administrator sets event to "not accepting" state
+1. Organizer goes to event management
+2. Organizer sets event to "not accepting" state
   2.1 Set a timeframe
     2.1.1 Begin time
     2.1.2 End time
@@ -113,11 +113,11 @@ Administrator
 
 ## Editing event information
 
-* Administrator
+* Organizer
 
 ### Pre-conditions
 1. Event exists
-1. User is the administrator of the event
+1. User is the organizer of the event
 
 ### Steps
 1. User goes to their "my events" page
@@ -127,7 +127,7 @@ Administrator
 ### Post-conditions
 1. Events information is updated
 
-## Administrator views "My Events" page
+## Organizer views "My Events" page
 
 ### Pre-conditions
 1. Event exists
@@ -184,7 +184,7 @@ Administrator
 
 ## Accepting a submission
 
-* Administrator
+* Organizer
 * Facilitator
 
 ### Pre-conditions
@@ -215,7 +215,7 @@ Administrator
 
 ## Removing/Rejecting a submission
 
-* Administrator
+* Organizer
 * Facilitator
 
 ### Pre-conditions
@@ -271,7 +271,7 @@ Facilitator
 
 ## Changing the order of the talks
 
-* Administrator
+* Organizer
 * Facilitator
 
 ### Pre-conditions
@@ -298,7 +298,7 @@ Facilitator
 ## Viewing current status of event
 
 ### Personas Involved
-* Administrator
+* Organizer
 * Facilitator
 * Anonymous User
 

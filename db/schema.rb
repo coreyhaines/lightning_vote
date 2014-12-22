@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20141221225411) do
   add_index "event_talks", ["event_id"], name: "index_event_talks_on_event_id"
 
   create_table "events", force: :cascade do |t|
-    t.string   "title",            null: false
+    t.string   "title",        null: false
     t.text     "description"
     t.date     "date"
     t.text     "start_time"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "administrator_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "organizer_id"
   end
 
   create_table "omniauth_identities", force: :cascade do |t|

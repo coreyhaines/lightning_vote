@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :admin do
+  namespace :organizer do
     resources :events, only: [:index, :new, :create, :edit, :update]
   end
 

@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20141221225411) do
     t.integer  "talk_slots"
   end
 
+  add_index "event_talks", ["event_id"], name: "index_event_talks_on_event_id"
+
   create_table "events", force: :cascade do |t|
     t.string   "title",            null: false
     t.text     "description"

@@ -6,6 +6,7 @@ RSpec.describe "CreatingEvents", :type => :request do
     post "/auth/identity/register", email: "corey@example.com", password: "password", password_confirmation: "password"
   end
   let(:event) { Event.find_by_title(event_params[:title]) }
+  let(:user) { User.find_by_username("corey@example.com") }
   describe "Creating a new event" do
     before do
       post admin_events_path, event: event_params
@@ -36,7 +37,7 @@ RSpec.describe "CreatingEvents", :type => :request do
     end
 
     it "lets me set the number of talk slots" do
-      event = Event.create! event_params
+      event = user.create_event event_params
       event.create_event_talk
 
       get edit_admin_event_path(event)
@@ -48,7 +49,7 @@ RSpec.describe "CreatingEvents", :type => :request do
     end
 
     it "lets me set the talk time" do
-      event = Event.create! event_params
+      event = user.create_event event_params
       event.create_event_talk
 
       get edit_admin_event_path(event)

@@ -1,0 +1,17 @@
+/ %h1 current_user.name
+/ %h1= 
+
+%div.form_container
+  %div
+    %div
+      %h1 Update Me
+
+  %div
+    %div
+      %div
+        = form_for @user, url: current_user_path do |f|
+          %div
+            = f.fields_for :user_detail, @user.user_detail do |user_detail_fields|
+              = user_detail_fields.text_field :name
+          %div.right
+            = f.submit "Create", :class => "button radius"

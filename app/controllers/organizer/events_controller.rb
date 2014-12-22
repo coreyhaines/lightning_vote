@@ -1,10 +1,5 @@
 module Organizer
   class EventsController < ApplicationController
-
-    def index
-      @events = current_user.events
-    end
-
     def new
       @event = current_user.events.new
     end
@@ -12,7 +7,7 @@ module Organizer
     def create
       @event = current_user.create_event(event_creation_params)
       if @event.valid?
-        redirect_to new_organizer_event_url
+        redirect_to organizer_events_path
       else
         flash[:notice] = "Unable to save event"
         render :new

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   namespace :organizer do
-    resources :events, only: [:index, :new, :create, :edit, :update]
+    resources :events, only: [:new, :create, :edit, :update]
   end
 
-  resource :current_user, :controller => "current_user", only: [:edit, :update]
+  resource :current_user, :controller => "current_user", only: [:edit, :update, :show]
 
   resources :events, :controller => "public/events", only: [:show]
 

@@ -8,6 +8,10 @@ class CurrentUserController < ApplicationController
     @user = current_user
   end
 
+  def show
+    @events = current_user.events
+  end
+
 private
   def user_params
     params.require(:user).permit(user_detail_attributes: [:name]).tap do |whitelisted|

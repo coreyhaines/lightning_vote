@@ -11,7 +11,6 @@ module Admin
 
     def create
       @event = Event.new(event_creation_params)
-      @event.build_event_talk
       if @event.save
         redirect_to new_admin_event_url
       else

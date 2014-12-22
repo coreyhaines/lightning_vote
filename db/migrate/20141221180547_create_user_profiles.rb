@@ -3,7 +3,7 @@ class CreateUserProfiles < ActiveRecord::Migration
     create_table :user_profiles do |t|
       t.string :provider, null: false
       t.string :uid, null: false
-      t.references :user, null: false
+      t.references :user, index: true, null: false
 
       t.timestamps null: false
     end

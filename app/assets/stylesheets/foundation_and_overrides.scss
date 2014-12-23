@@ -1539,6 +1539,10 @@ $topbar-height: 60px;
   right: 0;
 }
 
+.main-button-fix {
+  margin-right: 25px;
+}
+
 .form_container { @extend .row, .form }
 .form_container > div { @extend .row }
 .form_container > div > div { @extend .small-10, .small-push-1 }

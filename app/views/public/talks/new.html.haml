@@ -1,0 +1,23 @@
+- if flash[:notice]
+  .notice=flash[:notice]
+
+%div.form_container
+  %div
+    %div
+      %h1 Submit a talk
+
+  %div
+    %div
+      %div
+        = form_for [:public, @event, @talk] do |f|
+          %div
+            = f.text_field :topic, :placeholder => "Have a great topic"
+          %div
+            = f.text_field :email, :placeholder => "Your email address"
+          %div
+            = f.text_area :description, :placeholder => "Any more information about your talk"
+          %div.right
+            = f.submit "Submit", :class => "button radius"
+
+
+

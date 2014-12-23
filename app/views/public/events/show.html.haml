@@ -9,7 +9,8 @@
 
 %div.row
   %div.small-10.push-1.talk-list
-    Event Talks:
+    .button.radius=link_to "Submit Talk", new_public_event_talk_path(@event)
+    %div Event Talks:
     %ul.talks
       -@talks.each do |talk|
         %li.talk-information

@@ -5,16 +5,21 @@ module Public
       @talks = @event.talks
     end
 
+    def new
+      @event = Event.find(params[:event_id])
+      @talk = @event.talks.new
+    end
+
     def create
       @event = Event.find(params[:event_id])
       @talk = @event.submit_talk(talk_params)
-      redirect_to public_event_talks_path(@event)
+      redirect_to event_path(@event)
     end
 
     private
 
     def talk_params
-      params.require(:talks).permit(:topic, :email, :description)
+      params.require(:talk).permit(:topic, :email, :description)
     end
   end
 end

@@ -9,6 +9,7 @@ class CurrentUserController < ApplicationController
   end
 
   def show
+    @user = current_user
     @events = current_user.events
   end
 

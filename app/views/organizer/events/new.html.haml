@@ -1,11 +1,6 @@
 - if flash[:notice]
   .notice=flash[:notice]
 
-/ %div.row.form # .form_container
-/   %div.row #.header
-/     %div.small-10.small-push-1
-/       %h1 Create a new event
-
 %div.form_container
   %div
     %div
@@ -16,9 +11,9 @@
       %div
         = form_for [:organizer, @event] do |f|
           %div
-            = f.text_field :title, :placeholder => "title"
+            = f.text_field :title, :placeholder => "Name of the event"
           %div
-            = f.text_area :description, :placeholder => "talk description"
+            = f.text_area :description, :placeholder => "Description of the event"
           %div.small-7
             = f.date_field :date
           %div.small-7

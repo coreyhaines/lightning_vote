@@ -1,5 +1,19 @@
-%h1 My Events
+%h1 My Information
+
+%h2 Profile
+
+.link=link_to "Edit My Information", edit_current_user_path
+
+%ul
+  %li Name: #{@user.name}
+
+%h2 My Events
+
+.link=link_to "Create an event", new_organizer_event_path
 
 %ul
   -@events.each do |event|
-    %li=event.title
+    %li
+      =event.title
+      .link=link_to "Edit", edit_organizer_event_path(event)
+      .link=link_to "View", public_event_talks_path(event)

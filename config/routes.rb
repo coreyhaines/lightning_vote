@@ -15,5 +15,5 @@ Rails.application.routes.draw do
 
   post "/auth/identity/callback" => "sessions#create"
 
-  root 'public/events#index'
+  root 'static_pages#homepage'
 end

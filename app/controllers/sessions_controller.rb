@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.find_or_create_by_auth_hash(auth_hash)
     if user
       session[:current_user_id] = user.id
-      redirect_to "/organizer/events"
+      redirect_to "/current_user"
     else
       redirect_to "/auth/identity"
     end

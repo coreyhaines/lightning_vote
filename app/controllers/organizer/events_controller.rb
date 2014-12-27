@@ -7,7 +7,7 @@ module Organizer
     def create
       @event = current_user.create_event(event_creation_params)
       if @event.valid?
-        redirect_to organizer_events_path
+        redirect_to current_user_path
       else
         flash[:notice] = "Unable to save event"
         render :new
@@ -21,7 +21,7 @@ module Organizer
     def update
       @event = current_user.events.find(params[:id])
       if @event.update_attributes(event_creation_params)
-        redirect_to new_organizer_event_url
+        redirect_to current_user_path
       else
         flash[:notice] = "Unable to update event"
         render :edit

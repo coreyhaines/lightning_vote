@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   resources :events, :controller => "public/events", only: [:show]
 
   namespace :public do
-    resources :events, only: [] do
+    resources :events, only: [:index] do
       resources :talks, only: [:index, :new, :create]
     end
   end
 
   post "/auth/identity/callback" => "sessions#create"
+
+  root 'static_pages#homepage'
 end

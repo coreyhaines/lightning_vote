@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :session, only: [:destroy]
+
   post "/auth/identity/callback" => "sessions#create"
 
   root 'static_pages#homepage'

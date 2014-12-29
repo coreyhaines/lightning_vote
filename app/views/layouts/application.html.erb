@@ -21,25 +21,16 @@
         </ul>
         <section class="top-bar-section show-for-medium-up">
           <ul class="right top-fix">
-            <li><a href="/organizer/events/new">Create New Event</a></li>
-            <li><a href="/auth/identity/register">Signup</a>
-            <li><a href="/auth/identity">Login</a></li>
-            <li><a href="/current_user">My Profile</a></li>
+            <% if logged_in? %>
+              <li><a href="/organizer/events/new">Create New Event</a></li>
+              <li><a href="/current_user">My Profile</a></li>
+              <li><%= link_to "Logout", session_path, :method => :delete %></li>
+            <% else %>
+              <li><a href="/auth/identity/register">Signup</a>
+              <li><a href="/auth/identity">Login</a></li>
+            <% end %>
           </ul>
-        </section> -->
-
-        <!-- <section class="top-bar-section small-menu-icon right">
-          <ul class="right small-screen-menu">
-            <li class="has-dropdown">
-              <a class="small-menu-dropdown" href="#"></a>
-              <ul class="dropdown right">
-                <li><a href="#">Create New Event</a></li>
-                <li><a href="#">Signup</a>
-                <li><a href="#">Login</a></li>
-              </ul>
-            </li>
-          </ul>
-        </section> -->
+        </section>
     </div>
 
     <div class="fixed show-for-small-only">
@@ -51,10 +42,14 @@
             <li class="has-dropdown">
               <a class="small-menu-dropdown" href="#"></a>
               <ul class="dropdown right">
+              <% if logged_in? %>
                 <li><a href="/organizer/events/new">Create New Event</a></li>
+                <li><a href="/current_user">My Profile</a></li>
+                <li><%= link_to "Logout", session_path, :method => :delete %></li>
+              <% else %>
                 <li><a href="/auth/identity/register">Signup</a>
                 <li><a href="/auth/identity">Login</a></li>
-                <li><a href="/current_user">My Profile</a></li>
+              <% end %>
               </ul>
             </li>
           </ul>

@@ -9,6 +9,12 @@ class SessionsController < ApplicationController
       redirect_to "/auth/identity"
     end
   end
+
+  def destroy
+    session[:current_user_id] = nil
+    redirect_to root_path
+  end
+
   private
   def auth_hash
     request.env['omniauth.auth']

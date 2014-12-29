@@ -4,6 +4,7 @@ RSpec.describe CurrentUserController, type: :controller do
   describe "GET /current_user" do
     let(:current_user) { User.create username: "Shreya" }
     before do
+      allow(controller).to receive(:logged_in?).and_return(true)
       allow(controller).to receive(:current_user).and_return(current_user)
     end
     context "With no events" do

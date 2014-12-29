@@ -1,4 +1,6 @@
 class CurrentUserController < ApplicationController
+  before_filter :ensure_logged_in
+
   def update
     current_user.update_attributes(user_params)
     redirect_to current_user_path

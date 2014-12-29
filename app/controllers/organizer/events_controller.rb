@@ -1,6 +1,6 @@
 module Organizer
   class EventsController < ApplicationController
-    before_filter :ensure_logged_in?
+    before_filter :ensure_logged_in
 
     def new
       @event = current_user.events.new

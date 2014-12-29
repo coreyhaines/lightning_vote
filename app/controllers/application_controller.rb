@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     session[:current_user_id].present?
   end
 
-  def ensure_logged_in?
+  def ensure_logged_in
     unless logged_in?
       redirect_to "/auth/identity"
       return false

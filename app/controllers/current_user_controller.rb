@@ -1,5 +1,5 @@
 class CurrentUserController < ApplicationController
-  before_filter :ensure_logged_in?
+  before_filter :ensure_logged_in
 
   def update
     current_user.update_attributes(user_params)

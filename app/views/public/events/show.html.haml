@@ -5,15 +5,20 @@
 %div.row
   %div.small-10.push-1
     .event_details
+      .description=@event.description
+      .date When: #{@event.date} at #{@event.start_time}
       .name Organizer: #{@organizer.username}
 
 %div.row
   %div.small-10.push-1.talk-list
     .button.radius=link_to "Submit Talk", new_public_event_talk_path(@event)
-    %div Event Talks:
-    %ul.talks
-      -@talks.each do |talk|
-        %li.talk-information
-          .topic=talk.topic
-          .details
-            .description=talk.description
+    - if @talks.empty?
+      %div No Talks Submitted! #{link_to "Be the first!", new_public_event_talk_path(@event)}
+    - else
+      %div Check out these awesome submitted talks!
+      %ul.talks
+        -@talks.each do |talk|
+          %li.talk-information
+            .topic=talk.topic
+            .details
+              .description=talk.description

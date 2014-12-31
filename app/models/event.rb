@@ -8,6 +8,5 @@ class Event < ActiveRecord::Base
   validates :title, presence: true
 
   accepts_nested_attributes_for :event_talk
-
-  after_create ->{create_event_talk}
+  before_create ->{ build_event_talk }, if: ->{event_talk.nil?}
 end

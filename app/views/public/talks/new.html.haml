@@ -16,8 +16,6 @@
             = f.text_field :email, :placeholder => "Your email address"
           %div
             = f.text_area :description, :placeholder => "Any more information about your talk"
+          .button.radius.right.cancel=link_to "Cancel", event_path(@event)
           %div.right
             = f.submit "Submit", :class => "button radius"
-
-
-

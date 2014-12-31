@@ -1,19 +1,26 @@
-%h1 My Information
+%div.row.talk-title
+  %div.row
+    %div.small-10.small-push-1
+      %h2 #{@user.name}
+      .link.edit=link_to "Edit My Information", edit_current_user_path
 
-%h2 Profile
+%div.form_container
+  %div
+    %div
 
-.link=link_to "Edit My Information", edit_current_user_path
+  %div
+    %div
+      %div  
+        %h4
+          %em.lightning My Events
 
-%ul
-  %li Name: #{@user.name}
+        %hr.navy-blue
 
-%h2 My Events
+        %ul.event-list
+          -@events.each do |event|
+            %li
+              =event.title
+              .link=link_to "Edit", edit_organizer_event_path(event)
+              .link=link_to "View", event_path(event)
 
-.link=link_to "Create an event", new_organizer_event_path
-
-%ul
-  -@events.each do |event|
-    %li
-      =event.title
-      .link=link_to "Edit", edit_organizer_event_path(event)
-      .link=link_to "View", event_path(event)
+        .button.radius.right=link_to "Create an event", new_organizer_event_path

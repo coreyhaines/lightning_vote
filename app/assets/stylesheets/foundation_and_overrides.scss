@@ -97,8 +97,10 @@ $row-width: rem-calc(800);
 
 $primaryNavy  : #121828;
 $lightning    : #ffff00;
-$lightGrey    : #f0f0f0;
-$darkGrey     : #c4c4c4;
+// $lightGrey    : #f0f0f0;
+$lightGrey    : #dfdede;
+// $darkGrey     : #c4c4c4;
+$darkGrey     : #919090;
 $black        : #000000;
 
 $lightNavy    : lighten( $primaryNavy, 33% );
@@ -140,6 +142,8 @@ $body-bg: $lightGrey;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
+
+
 
 // We use this to control font-smoothing
 // $font-smoothing: antialiased;
@@ -1393,7 +1397,7 @@ $fieldset-border-style: none;
 $topbar-height: 60px;
 
 .fixed {
-  box-shadow: -1px 2px 3px darkgrey;
+  box-shadow: -1px 2px 7px $black;
 }
 
 // $topbar-margin-bottom: 0;
@@ -1472,21 +1476,18 @@ $topbar-height: 60px;
 
 @import 'foundation';
 
-.form_container { @extend .row, .form }
-.form_container > div { @extend .row }
-.form_container > div > div { @extend .small-10, .small-push-1 }
-
 .logo img {
   position: fixed;
-  top: 5px;
-  height: 75px;
+  top: 8px;
+  height: 65px;
+  left: 10px;
 }
 
 .container {
-  padding-top: 75px;
+  padding-top: 100px;
 }
 
-.row h1 {
+.row h1, .row h2, .row h3, .row h4, .row h5, .row h6 {
   color: #f0f0f0;
   // margin-left: -15px;
 }
@@ -1519,7 +1520,7 @@ $topbar-height: 60px;
    color: $darkGrey;  
 }
 
-.talk-title h1 {
+.talk-title h1, .talk-title h2, .talk-title h3, .talk-title h4, .talk-title h5, .talk-title h6 {
   color: $primaryNavy;
   text-shadow: 1px 1px 1px white;
 }
@@ -1543,11 +1544,60 @@ $topbar-height: 60px;
   margin-right: 25px;
 }
 
+.button a {
+  color: $black;
+}
+
+.link {
+  display: inline-block;
+}
+
+.link a {
+  color: $lightNavy;
+  font-size: 80%;
+}
+
+.edit {
+  position: relative;
+  top: -20px;
+}
+
+.event-list, .no-style {
+  margin-left: 0;
+}
+
+.event-list li, .no-style li {
+  list-style-type: none;
+}
+
+.navy-blue {
+  border-color: $lightNavy;
+}
+
+.lightning {
+  color: $lightning;
+}
+
+.description {
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.name {
+  margin-bottom: 15px;
+}
+
+.date, .name {
+  font-size: 90%;
+}
+
+.date span, .name span {
+  color: $darkGrey;
+}
+
 .form_container { @extend .row, .form }
 .form_container > div { @extend .row }
 .form_container > div > div { @extend .small-10, .small-push-1 }
-
-
 
 @media #{$small-only} {
   body {

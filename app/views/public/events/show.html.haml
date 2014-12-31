@@ -1,24 +1,37 @@
 %div.row.talk-title
-  %div.small-10.push-1
-    %h1 #{@event.title}
+  %div.row
+    %div.small-10.small-push-1
+      %h3 #{@event.title}
+      .event_details
+        .description=@event.description
+        .date 
+          %span When:
+          #{@event.date.strftime("%B %d, %Y")}
+          %span at
+          #{@event.start_time}
+        .name
+          %span Organizer:
+          #{@organizer.username}
 
-%div.row
-  %div.small-10.push-1
-    .event_details
-      .description=@event.description
-      .date When: #{@event.date} at #{@event.start_time}
-      .name Organizer: #{@organizer.username}
+%div.form_container
+  %div
+    %div
 
-%div.row
-  %div.small-10.push-1.talk-list
-    .button.radius=link_to "Submit Talk", new_public_event_talk_path(@event)
-    - if @talks.empty?
-      %div No Talks Submitted! #{link_to "Be the first!", new_public_event_talk_path(@event)}
-    - else
-      %div Check out these awesome submitted talks!
-      %ul.talks
-        -@talks.each do |talk|
-          %li.talk-information
-            .topic=talk.topic
-            .details
-              .description=talk.description
+  %div
+    %div
+      %div  
+        - if @talks.empty?
+          %div No Talks Submitted! #{link_to "Be the first!", new_public_event_talk_path(@event)}
+        - else
+          %h5
+            %em.lightning Check out these awesome submitted talks!
+          %hr.navy-blue
+          %ul.talks.no-style
+            -@talks.each do |talk|
+              %li.talk-information
+                .topic=talk.topic
+                .details
+                  .description=talk.description
+        .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
+    
+    

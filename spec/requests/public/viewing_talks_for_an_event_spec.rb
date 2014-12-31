@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Creating a Talk", type: :request do
   let(:organizer) { User.create username: "corey" }
-  let(:event_params) { {title: "Example Event", event_talk_attributes: {}} }
+  let(:event_params) { {title: "Example Event"} }
   context "With no talks accepted for the event" do
     it "Shows a message about no talks registered yet" do
       event = organizer.create_event event_params

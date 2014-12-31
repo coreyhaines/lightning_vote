@@ -1,20 +1,4 @@
-%div.row.talk-title
-  %div.row
-    %div.small-10.small-push-1
-      .event-logo
-        =image_tag(@event.logo_url)
-      %h3 #{@event.title}
-      .event_details
-        .description=@event.description
-        - if @event.date?
-          .date
-            %span When:
-            #{@event.date.strftime("%B %d, %Y")}
-            %span at
-            #{@event.start_time}
-        .name
-          %span Organizer:
-          #{@organizer.username}
+=render partial: "public/shared/event_information_header", locals: {event: @event, organizer: @organizer}
 
 %div.form_container
   %div

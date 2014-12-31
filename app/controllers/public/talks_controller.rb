@@ -2,6 +2,7 @@ module Public
   class TalksController < ApplicationController
     def new
       @event = Event.find(params[:event_id])
+      @organizer = @event.organizer
       @talk = @event.talks.new
     end
 

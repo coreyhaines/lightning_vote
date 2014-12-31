@@ -1,10 +1,5 @@
 module Public
   class TalksController < ApplicationController
-    def index
-      @event = Event.find(params[:event_id])
-      @talks = @event.talks
-    end
-
     def new
       @event = Event.find(params[:event_id])
       @talk = @event.talks.new

@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "CreatingEvents", :type => :request do
-  let(:event_params) { {title: "Example Event", description: "This is a description", date: Date.today, start_time: "7pm"} }
+  let(:event_talk_attributes) { {talk_slots: 10, talk_time: 5} }
+  let(:event_params) { {title: "Example Event", description: "This is a description", date: Date.today, start_time: "7pm", event_talk_attributes: event_talk_attributes } }
   before do
     post "/auth/identity/register", email: "corey@example.com", password: "password", password_confirmation: "password"
   end
@@ -21,6 +22,11 @@ RSpec.describe "CreatingEvents", :type => :request do
 
     it "links the created event to the logged in user" do
       expect(event.organizer.username).to eq("corey@example.com")
+    end
+
+    it "lets me update the event talk attributes" do
+      expect(event.event_talk.talk_slots).to eq(10)
+      expect(event.event_talk.talk_time).to eq(5)
     end
   end
 

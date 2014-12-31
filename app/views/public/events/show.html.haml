@@ -4,11 +4,12 @@
       %h3 #{@event.title}
       .event_details
         .description=@event.description
-        .date 
-          %span When:
-          #{@event.date.strftime("%B %d, %Y")}
-          %span at
-          #{@event.start_time}
+        - if @event.date?
+          .date
+            %span When:
+            #{@event.date.strftime("%B %d, %Y")}
+            %span at
+            #{@event.start_time}
         .name
           %span Organizer:
           #{@organizer.username}
@@ -19,7 +20,7 @@
 
   %div
     %div
-      %div  
+      %div
         - if @talks.empty?
           %div No Talks Submitted! #{link_to "Be the first!", new_public_event_talk_path(@event)}
         - else
@@ -33,5 +34,5 @@
                 .details
                   .description=talk.description
         .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
-    
-    
+
+

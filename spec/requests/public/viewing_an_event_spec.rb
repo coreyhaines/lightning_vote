@@ -9,7 +9,7 @@ RSpec.describe "Publicly viewing an event", type: :request do
 
       expect(response).to have_http_status(200)
       expect(response.body).to include("Example Event")
-      expect(response.body).to include("Organizer: Corey")
+      expect(response.body).to include("Corey")
     end
 
     it "Shows the list of talks associated with the event" do

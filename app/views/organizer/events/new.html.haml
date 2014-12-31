@@ -8,18 +8,6 @@
 
   %div
     %div
-      %div
-        = form_for [:organizer, @event] do |f|
-          %div
-            = f.text_field :title, :placeholder => "Name of the event"
-          %div
-            = f.text_area :description, :placeholder => "Description of the event"
-          %div.small-7
-            = f.date_field :date
-          %div.small-7
-            = f.text_field :start_time, :placeholder => "start time"
-          %div.right
-            = f.submit "Create", :class => "button radius"
-
-
+      %div.event_form
+        = render partial: "event_form", locals: {event: @event, event_talk: EventTalk.new, button_text: "Create"}
 

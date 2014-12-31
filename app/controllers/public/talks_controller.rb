@@ -15,7 +15,7 @@ module Public
     private
 
     def talk_params
-      params.require(:talk).permit(:topic, :email, :description)
+      params.require(:talk).permit(:topic, :presenter_name, :email, :description)
     end
   end
 end

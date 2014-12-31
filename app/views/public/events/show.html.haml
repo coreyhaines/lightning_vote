@@ -8,20 +8,23 @@
     %div
       %div
         - if @talks.empty?
+          .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
           %div No Talks Submitted! #{link_to "Be the first!", new_public_event_talk_path(@event)}
         - else
           %h5
+            .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
             %em.lightning Check out these awesome submitted talks!
           %hr.navy-blue
-          %ul.talks.no-style
+          %ol.talks
             -@talks.each do |talk|
               %li.talk-information
-                .topic=talk.topic
+                .topic #{talk.presenter_name} - #{talk.topic}
                 .details
                   .description=talk.description
-        .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
+          %hr.navy-blue
       .submission_guidelines{style: "clear:both"}
         %header Submission Guidelines
         = simple_format @event.event_talk.talk_submission_guidelines, wrapper_tag: "div"
+      .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
 
 

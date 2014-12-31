@@ -1,6 +1,8 @@
 %div.row.talk-title
   %div.row
     %div.small-10.small-push-1
+      .event-logo
+        =image_tag(@event.logo_url)
       %h3 #{@event.title}
       .event_details
         .description=@event.description

@@ -1534,6 +1534,13 @@ $topbar-height: 60px;
   color: $lightNavy;
 }
 
+.event-logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 20px 20px 0;
+  float: left;
+}
+
 .top-fix {
   position: fixed;
   top: 0;

@@ -31,7 +31,7 @@ module Organizer
     end
     private
     def event_creation_params
-      params.require(:event).permit(:title, :description, :date,
+      params.require(:event).permit(:title, :description, :logo_url, :date,
                                     :start_time,
                                     event_talk_attributes: [ :talk_slots, :talk_time ] )
     end

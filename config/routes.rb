@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :events, :controller => "public/events", only: [:show]
 
   namespace :public do
-    resources :events, only: [:index] do
+    resources :events, only: [] do
       resources :talks, only: [:new, :create]
     end
   end

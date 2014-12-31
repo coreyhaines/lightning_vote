@@ -16,8 +16,8 @@ RSpec.describe "Creating a Talk", type: :request do
 
   context "With talks accepted for the event" do
     it "Shows the talks" do
-      talk1 = event.submit_talk topic: "Example Topic 1", email: "corey@example.com"
-      talk2 = event.submit_talk topic: "Example Topic 2", email: "corey@example.com"
+      talk1 = event.submit_talk topic: "Example Topic 1", email: "corey@example.com", presenter_name: "Corey"
+      talk2 = event.submit_talk topic: "Example Topic 2", email: "corey@example.com", presenter_name: "Corey"
 
       get event_path(event)
 

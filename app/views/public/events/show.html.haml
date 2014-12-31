@@ -1,20 +1,4 @@
-%div.row.talk-title
-  %div.row
-    %div.small-10.small-push-1
-      .event-logo
-        =image_tag(@event.logo_url)
-      %h3 #{@event.title}
-      .event_details
-        .description=@event.description
-        - if @event.date?
-          .date
-            %span When:
-            #{@event.date.strftime("%B %d, %Y")}
-            %span at
-            #{@event.start_time}
-        .name
-          %span Organizer:
-          #{@organizer.username}
+=render partial: "public/shared/event_information_header", locals: {event: @event, organizer: @organizer}
 
 %div.form_container
   %div
@@ -24,17 +8,23 @@
     %div
       %div
         - if @talks.empty?
+          .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
           %div No Talks Submitted! #{link_to "Be the first!", new_public_event_talk_path(@event)}
         - else
           %h5
+            .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
             %em.lightning Check out these awesome submitted talks!
           %hr.navy-blue
-          %ul.talks.no-style
+          %ol.talks
             -@talks.each do |talk|
               %li.talk-information
-                .topic=talk.topic
+                .topic #{talk.presenter_name} - #{talk.topic}
                 .details
                   .description=talk.description
-        .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
+          %hr.navy-blue
+      .submission_guidelines{style: "clear:both"}
+        %header Submission Guidelines
+        = simple_format @event.event_talk.talk_submission_guidelines, wrapper_tag: "div"
+      .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
 
 

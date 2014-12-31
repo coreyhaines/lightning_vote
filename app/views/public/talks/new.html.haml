@@ -1,21 +1,33 @@
-- if flash[:notice]
-  .notice=flash[:notice]
+=render partial: "public/shared/event_information_header", locals: {event: @event, organizer: @organizer}
 
 %div.form_container
   %div
+    - if flash[:notice]
+      .notice=flash[:notice]
     %div
       %h1 Submit a talk
+
+
 
   %div
     %div
       %div
         = form_for [:public, @event, @talk] do |f|
           %div
-            = f.text_field :topic, :placeholder => "Have a great topic"
+            = f.label :topic, value: "Your talk title", class: "required"
+            = f.text_field :topic
           %div
-            = f.text_field :email, :placeholder => "Your email address"
+            = f.label :presenter_name, value: "Your name (visible to public)", class: "required"
+            = f.text_field :presenter_name
           %div
+            = f.label :email, value: "Your email (only visible to organizer)", class: "required"
+            = f.text_field :email
+          %div
+            = f.label :description, value: "Description"
             = f.text_area :description, :placeholder => "Any more information about your talk"
           .button.radius.right.cancel=link_to "Cancel", event_path(@event)
           %div.right
             = f.submit "Submit", :class => "button radius"
+        .submission_guidelines
+          %header Submission Guidelines
+          = simple_format @event.event_talk.talk_submission_guidelines, wrapper_tag: "div"

@@ -16,11 +16,14 @@
     = f.text_field :start_time, :placeholder => "What time does the event start?"
   = f.fields_for :event_talk, event_talk do |et|
     %div
-      = et.label :talk_time
-      = et.text_field :talk_time, placeholder: "How long is each talk?"
+      = et.label :talk_time, value: "Talk time in minutes"
+      = et.text_field :talk_time, placeholder: "How long is each talk in minutes?"
     %div
       = et.label :talk_slots
       = et.text_field :talk_slots, placeholder: "How many talk slots are there?"
+    %div
+      = et.label :talk_submission_guidelines, value: "Submission Guidelines (limited html available)"
+      = et.text_area :talk_submission_guidelines, placeholder: "Any guidelines for submitting talks? Where to send slides, etc?"
   %div.right
     = f.submit button_text, :class => "button radius"
 

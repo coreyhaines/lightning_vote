@@ -13,8 +13,8 @@ RSpec.describe "Publicly viewing an event", type: :request do
     end
 
     it "Shows the list of talks associated with the event" do
-      event.submit_talk(topic: "Example Talk 1", email: "corey@example.com")
-      event.submit_talk(topic: "Example Talk 2", email: "corey@example.com")
+      event.submit_talk(topic: "Example Talk 1", email: "corey@example.com", presenter_name: "Corey")
+      event.submit_talk(topic: "Example Talk 2", email: "corey@example.com", presenter_name: "Corey")
 
       get "/events/#{event.id}"
 

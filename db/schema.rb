@@ -11,17 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141221225411) do
+ActiveRecord::Schema.define(version: 20141231205221) do
 
   create_table "event_talks", force: :cascade do |t|
+    t.integer  "talk_id"
     t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer  "talk_time"
     t.integer  "talk_slots"
+    t.text     "talk_submission_guidelines"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "event_talks", ["event_id"], name: "index_event_talks_on_event_id"
+  add_index "event_talks", ["talk_id"], name: "index_event_talks_on_talk_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "title",        null: false
@@ -47,13 +50,12 @@ ActiveRecord::Schema.define(version: 20141221225411) do
     t.string   "topic"
     t.string   "email"
     t.text     "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "event_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "event_talk_id"
+    t.string   "presenter_name"
   end
 
-  add_index "talks", ["event_id"], name: "index_talks_on_event_id"
   add_index "talks", ["event_talk_id"], name: "index_talks_on_event_talk_id"
 
   create_table "user_details", force: :cascade do |t|

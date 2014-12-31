@@ -1544,6 +1544,11 @@ $topbar-height: 60px;
   margin-right: 25px;
 }
 
+.cancel {
+  margin-left: 25px;
+  background-color: $darkGrey;
+}
+
 .button a {
   color: $black;
 }

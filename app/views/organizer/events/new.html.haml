@@ -25,6 +25,13 @@
           %div.small-7
             = f.label :start_time, value: "Start time"
             = f.text_field :start_time, :placeholder => "What time does the event start?"
+          = f.fields_for :event_talk, EventTalk.new do |et|
+            %div
+              = et.label :talk_time
+              = et.text_field :talk_time, placeholder: "How long is each talk?"
+            %div
+              = et.label :talk_slots
+              = et.text_field :talk_slots, placeholder: "How many talk slots are there?"
           %div.right
             = f.submit "Create", :class => "button radius"
 

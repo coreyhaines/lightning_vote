@@ -29,9 +29,9 @@
           = f.fields_for :event_talk do |et|
             %div
               = et.label :talk_time
-              = et.text_field :talk_time
+              = et.text_field :talk_time, placeholder: "How long is each talk?"
             %div
               = et.label :talk_slots
-              = et.text_field :talk_slots
-            %div.right
-              = f.submit "Update", :class => "button radius"
+              = et.text_field :talk_slots, placeholder: "How many talk slots are there?"
+          %div.right
+            = f.submit "Update", :class => "button radius"

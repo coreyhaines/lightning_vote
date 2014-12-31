@@ -1504,20 +1504,31 @@ $topbar-height: 60px;
   color: #f0f0f0;
 }
 
+.form label.required:before {
+  content: "*";
+  float: left;
+  font-size: 1.5em;
+  color: red;
+}
+
+form .field_with_errors input, form .field_with_errors textarea  {
+  background-color: pink;
+}
+
 ::-webkit-input-placeholder {
    color: $darkGrey;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: $darkGrey;  
+   color: $darkGrey;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: $darkGrey;  
+   color: $darkGrey;
 }
 
-:-ms-input-placeholder {  
-   color: $darkGrey;  
+:-ms-input-placeholder {
+   color: $darkGrey;
 }
 
 .talk-title h1, .talk-title h2, .talk-title h3, .talk-title h4, .talk-title h5, .talk-title h6 {
@@ -1622,7 +1633,7 @@ $topbar-height: 60px;
     right: 0;
     height: 60px;
     background-color: yellow;
-    width: 60px;  
+    width: 60px;
   }
 
   .container {
@@ -1630,13 +1641,13 @@ $topbar-height: 60px;
   }
 
   .top-bar {
-    // background-color: $darkGrey; 
-    background-color: $lightGrey; 
+    // background-color: $darkGrey;
+    background-color: $lightGrey;
 
   }
 
   .fixed {
-    box-shadow: 1px 1px 1px $primaryNavy; 
+    box-shadow: 1px 1px 1px $primaryNavy;
   }
 
   .logo img {

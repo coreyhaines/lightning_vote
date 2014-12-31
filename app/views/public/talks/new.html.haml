@@ -1,25 +1,26 @@
-- if flash[:notice]
-  .notice=flash[:notice]
-
 =render partial: "public/shared/event_information_header", locals: {event: @event, organizer: @organizer}
 
 %div.form_container
   %div
+    - if flash[:notice]
+      .notice=flash[:notice]
     %div
       %h1 Submit a talk
+
+
 
   %div
     %div
       %div
         = form_for [:public, @event, @talk] do |f|
           %div
-            = f.label :topic, value: "Your talk title"
+            = f.label :topic, value: "Your talk title", class: "required"
             = f.text_field :topic
           %div
-            = f.label :presenter_name, value: "Your name (visible to public)"
+            = f.label :presenter_name, value: "Your name (visible to public)", class: "required"
             = f.text_field :presenter_name
           %div
-            = f.label :email, value: "Your email (only visible to organizer)"
+            = f.label :email, value: "Your email (only visible to organizer)", class: "required"
             = f.text_field :email
           %div
             = f.label :description, value: "Description"

@@ -11,7 +11,7 @@ RSpec.describe "Creating a Talk", type: :request do
       get new_public_event_talk_path(event)
       expect(response).to have_http_status(200)
 
-      post public_event_talks_path(event), event_id: event.id, talk: { topic: "Example Topic", email: "corey@example.com" }
+      post public_event_talks_path(event), event_id: event.id, talk: { topic: "Example Topic", email: "corey@example.com", presenter_name: "Corey" }
       follow_redirect!
       expect(response.body).to match("Example Topic")
     end

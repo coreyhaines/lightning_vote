@@ -4,9 +4,7 @@ RSpec.describe EventTalk, type: :model do
   describe "#submit_talk" do
     it "creates a talk that is associated with the event" do
       event = Event.create! title: "Example"
-      event_talk = EventTalk.create!(event: event)
-
-      created_talk = event_talk.submit_talk(topic: "Example Topic", email: "corey@example.com", description: "Example Description")
+      created_talk = event.submit_talk(topic: "Example Topic", email: "corey@example.com", description: "Example Description", presenter_name: "Corey")
 
       talk = event.talks.find(created_talk.id)
       expect(talk.topic).to eq("Example Topic")

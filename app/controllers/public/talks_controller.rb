@@ -9,7 +9,13 @@ module Public
     def create
       @event = Event.find(params[:event_id])
       @talk = @event.submit_talk(talk_params)
-      redirect_to event_path(@event)
+      if @talk.valid?
+        redirect_to event_path(@event)
+      else
+        flash[:notice] = "Could not save your talk. Please check below"
+        @organizer = @event.organizer
+        render :new
+      end
     end
 
     private

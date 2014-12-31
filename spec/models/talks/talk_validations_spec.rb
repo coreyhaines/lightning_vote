@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Talk, type: :model do
 
-  [:topic, :email].each do |field|
+  [:topic, :email, :presenter_name].each do |field|
     it "requires the #{field} field" do
       talk = Talk.new
 

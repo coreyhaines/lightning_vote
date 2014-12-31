@@ -1,5 +1,6 @@
 - if flash[:notice]
   .notice=flash[:notice]
+
 %div.form_container
   %div
     %div
@@ -7,20 +8,23 @@
 
   %div
     %div
-      %div.edit_event_form
+      %div.event_form
         = form_for [:organizer, @event] do |f|
           %div
             = f.label :title
-            = f.text_field :title
+            = f.text_field :title, :placeholder => "What is your event called?"
+          %div
+            = f.label :logo_url, value: "URL of logo"
+            = f.text_field :logo_url, :placeholder => "URL to the logo of the event."
           %div
             = f.label :description
-            = f.text_area :description
+            = f.text_area :description, :placeholder => "Give information that will help people decide what talks to give."
           %div
-            = f.label :date
+            = f.label :date, value: "Date of event"
             = f.date_field :date
           %div
-            = f.label :start_time
-            = f.text_field :start_time
+            = f.label :start_time, value: "Start time"
+            = f.text_field :start_time, :placeholder => "What time does the event start?"
           %div
           = f.fields_for :event_talk do |et|
             %div

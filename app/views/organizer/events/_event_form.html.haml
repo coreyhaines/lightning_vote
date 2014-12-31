@@ -21,6 +21,9 @@
     %div
       = et.label :talk_slots
       = et.text_field :talk_slots, placeholder: "How many talk slots are there?"
+    %div
+      = et.label :talk_submission_guidelines, value: "Submission Guidelines (limited html available)"
+      = et.text_area :talk_submission_guidelines, placeholder: "Any guidelines for submitting talks? Where to send slides, etc?"
   %div.right
     = f.submit button_text, :class => "button radius"
 

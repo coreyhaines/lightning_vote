@@ -20,5 +20,8 @@
                 .details
                   .description=talk.description
         .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
+      .submission_guidelines{style: "clear:both"}
+        %header Submission Guidelines
+        = simple_format @event.event_talk.talk_submission_guidelines, wrapper_tag: "div"
 
 

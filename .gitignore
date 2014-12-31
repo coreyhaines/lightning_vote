@@ -30,3 +30,4 @@ pickle-email-*.html
 /tmp
 .ruby-gemset
 .ruby-version
+.DS_Store

@@ -7,6 +7,7 @@
   %div
     %div
       %div
+        %hr.navy-blue
         - if @talks.empty?
           .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
           %div No Talks Submitted! #{link_to "Be the first!", new_public_event_talk_path(@event)}
@@ -14,7 +15,6 @@
           %h5
             .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
             %em.lightning Check out these awesome submitted talks!
-          %hr.navy-blue
           %ol.talks
             -@talks.each do |talk|
               %li.talk-information

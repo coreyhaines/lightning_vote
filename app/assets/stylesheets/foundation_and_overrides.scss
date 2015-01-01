@@ -95,7 +95,8 @@ $row-width: rem-calc(800);
 // $font-weight-normal: normal !default;
 // $font-weight-bold: bold !default;
 
-$primaryNavy  : #121828;
+// $primaryNavy  : #121828;
+$primaryNavy  : #162140;
 $lightning    : #ffff00;
 // $lightGrey    : #f0f0f0;
 $lightGrey    : #dfdede;
@@ -104,6 +105,7 @@ $darkGrey     : #919090;
 $black        : #000000;
 
 $lightNavy    : lighten( $primaryNavy, 33% );
+$mediumNavy   : lighten( $primaryNavy, 20% );
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -1493,7 +1495,7 @@ $topbar-height: 60px;
 }
 
 .form, .talk-list {
-  background-color: #121828;
+  background-color: $primaryNavy;
   padding: 3%;
   border-radius: 30px;
   color: $lightGrey;
@@ -1594,7 +1596,7 @@ form .field_with_errors input, form .field_with_errors textarea  {
 }
 
 .navy-blue {
-  border-color: $lightNavy;
+  border-color: $mediumNavy;
 }
 
 .lightning {
@@ -1618,18 +1620,27 @@ form .field_with_errors input, form .field_with_errors textarea  {
   color: $darkGrey;
 }
 
+.submission_guidelines {
+  color: $lightNavy;
+}
+
 footer {
-  height: 350px;
-  margin-top: 200px;
-  padding-top: 150px;
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: 100px;
+  padding-top: 50px;
   // padding-left: 20%;
   width: 100%;
-  background-color: $darkGrey;
+  // background-color: $darkGrey;
 }
 
 .copyright a {
-  color: $lightning;
-  text-shadow: 1.4px 1.3px 1.8px $black;
+  color: $darkGrey;
+  // text-shadow: 1.4px 1.3px 1.8px $black;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
 }
 
 .form_container { @extend .row, .form }
@@ -1639,6 +1650,7 @@ footer {
 @media #{$small-only} {
   body {
     background-color: $primaryNavy;
+    color: $lightGrey;
   }
 
   .hello {
@@ -1656,7 +1668,7 @@ footer {
 
   .top-bar {
     // background-color: $darkGrey;
-    background-color: $lightGrey;
+    background-color: $mediumNavy;
 
   }
 
@@ -1687,18 +1699,35 @@ footer {
   .small-menu-dropdown {
     width: 60px;
     height: 60px;
-    background-color: red;
+    background-color: $lightNavy;
   }
 
   .small-screen-menu {
     width: 100%;
   }
 
+  .event-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 15px 15px 0;
+    float: left;
+  }
+
+  .talk-title h1, .talk-title h2, .talk-title h3, .talk-title h4, .talk-title h5, .talk-title h6 {
+    color: $lightGrey;
+    text-shadow: none;
+  }
+
+  .date span, .name span {
+    color: $mediumNavy;
+  }
+
 }
 
 @media #{$medium-only} {
-  // body {
-  //   background-color: $primaryNavy;
-  // }
+
+  .row {
+    width: 600px;
+  }
 
 }

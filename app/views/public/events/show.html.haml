@@ -20,11 +20,11 @@
               %li.talk-information
                 .topic #{talk.presenter_name} - #{talk.topic}
                 .details
-                  .description=talk.description
+                  .description=simple_format auto_link(talk.description)
           %hr.navy-blue
       .submission_guidelines{style: "clear:both"}
         %header Submission Guidelines
-        = simple_format @event.event_talk.talk_submission_guidelines, wrapper_tag: "div"
+        = simple_format auto_link(@event.event_talk.talk_submission_guidelines, html: { target: "_blank"}), wrapper_tag: "div"
       .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
 
 

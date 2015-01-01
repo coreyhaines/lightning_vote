@@ -5,7 +5,7 @@
         =image_tag(event.logo_url)
       %h3 #{event.title}
       .event_details
-        .description=event.description
+        .description=simple_format auto_link(event.description, html: {target: "_blank"})
         - if event.date?
           .date
             %span When:

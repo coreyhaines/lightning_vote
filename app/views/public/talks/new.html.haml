@@ -30,4 +30,4 @@
             = f.submit "Submit", :class => "button radius"
         .submission_guidelines
           %header Submission Guidelines
-          = simple_format @event.event_talk.talk_submission_guidelines, wrapper_tag: "div"
+          = simple_format auto_link(@event.event_talk.talk_submission_guidelines, html: {target: "_blank"}), wrapper_tag: "div"

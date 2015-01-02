@@ -1478,6 +1478,15 @@ $topbar-height: 60px;
 
 @import 'foundation';
 
+body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height:100%;
+  position:relative;
+}
+
 .logo img {
   position: fixed;
   top: 8px;
@@ -1487,6 +1496,7 @@ $topbar-height: 60px;
 
 .container {
   padding-top: 100px;
+  padding-bottom: 70px;
 }
 
 .row h1, .row h2, .row h3, .row h4, .row h5, .row h6 {
@@ -1626,10 +1636,12 @@ form .field_with_errors input, form .field_with_errors textarea  {
 
 footer {
   clear: both;
-  position: relative;
-  height: 200px;
-  margin-top: 100px;
-  padding-top: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  // margin-top: 100px;
+  // padding-top: 50px;
   // padding-left: 20%;
   width: 100%;
   // background-color: $darkGrey;
@@ -1643,9 +1655,9 @@ footer {
   right: 30px;
 }
 
-.form_container { @extend .row, .form }
-.form_container > div { @extend .row }
-.form_container > div > div { @extend .small-10, .small-push-1 }
+.display_container { @extend .row, .form }
+.display_container > div { @extend .row }
+.display_container > div > div { @extend .small-10, .small-push-1 }
 
 @media #{$small-only} {
   body {

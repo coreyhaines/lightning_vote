@@ -13,36 +13,16 @@
   </head>
 
   <body>
-    <div class="fixed show-for-medium-up">
-      <nav class="top-bar show-for-medium-up" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name">
-            <a href="/" class="logo"><%= image_tag "lightning-vote-logo.png" %></a>
-          </li>
-        </ul>
-        <section class="top-bar-section show-for-medium-up">
-          <ul class="right top-fix">
-            <% if logged_in? %>
-              <li><a href="/organizer/events/new">Create New Event</a></li>
-              <li><a href="/current_user">My Profile</a></li>
-              <li><%= link_to "Logout", session_path, :method => :delete %></li>
-            <% else %>
-              <li><a href="/auth/identity/register">Signup</a>
-              <li><a href="/auth/identity">Login</a></li>
-            <% end %>
+    <div class="wrapper">
+      <div class="fixed show-for-medium-up">
+        <nav class="top-bar show-for-medium-up" data-topbar role="navigation">
+          <ul class="title-area">
+            <li class="name">
+              <a href="/" class="logo"><%= image_tag "lightning-vote-logo.png" %></a>
+            </li>
           </ul>
-        </section>
-    </div>
-
-    <div class="fixed show-for-small-only">
-      <nav class="top-bar" data-topbar role="navigation">
-        <a href="/" class="logo"><%= image_tag "lightning-vote-logo.png" %></a>
-
-        <section class="top-bar-section small-menu-icon right">
-          <ul class="right small-screen-menu">
-            <li class="has-dropdown">
-              <a class="small-menu-dropdown" href="#"></a>
-              <ul class="dropdown right">
+          <section class="top-bar-section show-for-medium-up">
+            <ul class="right top-fix">
               <% if logged_in? %>
                 <li><a href="/organizer/events/new">Create New Event</a></li>
                 <li><a href="/current_user">My Profile</a></li>
@@ -51,20 +31,42 @@
                 <li><a href="/auth/identity/register">Signup</a>
                 <li><a href="/auth/identity">Login</a></li>
               <% end %>
-              </ul>
-            </li>
-          </ul>
-        </section>
-      </nav>
-    </div>
+            </ul>
+          </section>
+      </div>
+
+      <div class="fixed show-for-small-only">
+        <nav class="top-bar" data-topbar role="navigation">
+          <a href="/" class="logo"><%= image_tag "lightning-vote-logo.png" %></a>
+
+          <section class="top-bar-section small-menu-icon right">
+            <ul class="right small-screen-menu">
+              <li class="has-dropdown">
+                <a class="small-menu-dropdown" href="#"></a>
+                <ul class="dropdown right">
+                <% if logged_in? %>
+                  <li><a href="/organizer/events/new">Create New Event</a></li>
+                  <li><a href="/current_user">My Profile</a></li>
+                  <li><%= link_to "Logout", session_path, :method => :delete %></li>
+                <% else %>
+                  <li><a href="/auth/identity/register">Signup</a>
+                  <li><a href="/auth/identity">Login</a></li>
+                <% end %>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </nav>
+      </div>
 
 
-    <div class="container">
-      <%= yield %>
+      <div class="container">
+        <%= yield %>
+      </div>
+      <footer>
+        <p class="copyright"><a href="/about">&#169; 2015 LightningVote</a></p>
+      </footer>
     </div>
-    <footer>
-      <p class="copyright"><a href="/about">&#169; <%= Time.now.strftime("%Y") %> LightningVote</a></p>
-    </footer>
     <%= javascript_include_tag "application" %>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

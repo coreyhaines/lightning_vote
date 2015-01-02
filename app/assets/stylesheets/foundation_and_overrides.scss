@@ -1654,6 +1654,7 @@ form .field_with_errors input, form .field_with_errors textarea  {
     top: 14px;
     height: 40px;
     left: 10px;
+    z-index: 998;
   }
 
   .logo-small img {
@@ -1663,21 +1664,40 @@ form .field_with_errors input, form .field_with_errors textarea  {
     left: 45px;
   }
 
-  .small-menu-icon {
-    // width: 60px;
-    // height: 60px;
-    z-index: 999;
-    background-color: yellow;
-  }
-
-  .small-menu-dropdown {
-    width: 60px;
-    height: 60px;
-    background-color: red;
-  }
-
-  .small-screen-menu {
+  .top-bar-section {
     width: 100%;
+  }
+
+  .top-bar-section .has-dropdown > a:after {
+    border-color: transparent transparent transparent $darkGrey;
+    top: 25px;
+  }
+
+  .small-screen-menu li a {
+    width: 100%;
+    height: 40px;
+    z-index: 997;
+    background-color: $lightGrey;
+  }
+
+  .dropdown {
+    z-index: 999!important;
+  }
+
+  .top-bar-section .dropdown li.title h5 a, .top-bar-section .dropdown li a {
+    color: $black;
+  }
+
+  .top-bar-section .dropdown li a {
+    border-bottom: 1px solid $darkGrey;
+  }
+
+  .top-bar-section .dropdown li.title h5 a {
+    border: none;
+  }
+
+  .top-bar-section ul li:hover:not(.has-form) > a {
+    background-color: $lightGrey;
   }
 
 }

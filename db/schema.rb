@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141231205221) do
+ActiveRecord::Schema.define(version: 20150106231904) do
 
   create_table "event_talks", force: :cascade do |t|
     t.integer  "talk_id"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20141231205221) do
     t.integer  "talk_time"
     t.integer  "talk_slots"
     t.text     "talk_submission_guidelines"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.boolean  "accepting_submissions",      default: true
   end
 
   add_index "event_talks", ["event_id"], name: "index_event_talks_on_event_id"

@@ -8,11 +8,13 @@
     %div
       %div
         - if @talks.empty?
-          .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
+          - if @event.accepting_submissions
+            .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
           %div No Talks Submitted! #{link_to "Be the first!", new_public_event_talk_path(@event)}
         - else
           %h5
-            .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
+            - if @event.accepting_submissions
+              .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
             %em.lightning Check out these awesome submitted talks!
           %hr.navy-blue
           %ol.talks
@@ -25,6 +27,7 @@
       .submission_guidelines{style: "clear:both"}
         %header Submission Guidelines
         = simple_format auto_link(@event.event_talk.talk_submission_guidelines, html: {target: "_blank"}), wrapper_tag: "div"
-      .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
+      - if @event.accepting_submissions
+        .button.radius.right=link_to "Submit Talk", new_public_event_talk_path(@event)
 
 

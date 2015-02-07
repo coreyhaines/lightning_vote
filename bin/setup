@@ -21,8 +21,8 @@ Dir.chdir APP_ROOT do
   system "bin/rake db:setup"
 
   puts "\n== Removing old logs and tempfiles =="
-  system "rm -f log/*"
-  system "rm -rf tmp/cache"
+  system "bin/rake log:clear"
+  system "bin/rake tmp:clear"
 
   puts "\n== Restarting application server =="
   system "touch tmp/restart.txt"

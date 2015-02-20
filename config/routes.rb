@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   post "/auth/identity/callback" => "sessions#create"
 
   root 'static_pages#homepage'
+
+  get "/about", to: "static_pages#about", as: :about_page
 end
